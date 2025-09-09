@@ -376,38 +376,47 @@
                     <!-- <div class="text-end">Stock</div> -->
                   </template>
 
-                  <template v-slot:item.itemname="{ item }">
+                 <template v-slot:item.itemname="{ item }" style="padding:0px">
+
+                     <div style="font-size:0.6rem; padding-left:10px;color:red;">{{ item.itemcode }}</div>
                     <v-chip :color="getRandomColor()" class="text-start">
-                      {{ item.itemname }}
+
+                      <div>
+                         {{ item.itemname }}
+                      </div>
+
                     </v-chip>
+
+                    <div style="font-size:0.6rem;padding-left:14px;">{{ item.unitcode }}</div>
                   </template>
 
                   <template v-slot:item.qty="{ item }">
 
                     <v-number-input
-                      :reverse="false"
-                      control-variant="default"
-                      :hide-input="false"
-                      :inset="false"
-                      variant="solo-filled"
-                      v-model="item.qty"
-                      label="จำนวน"
-                      :min="1"
-                      :max="9999"
-                      :step="1"
-                      @update:modelValue="val => {
-                        // item.qty is already updated to val
-                        // Calculate new cansale_qty
-                        const acc = Number(item.acc_qty) || 0;
-                        const reserve = Number(item.reserve_qty) || 0;
-                        const old = Number(item.old_qty) || 0;
-                        const qty = Number(val) || 0;
-                        item.cansale_qty = acc - reserve + old - qty;
-                        item.cansale_status_text = item.cansale_qty > 0 ? 'ขายได้' : 'สินค้าไม่พอขาย';
-                      }"
-                      class="text-center"
-                      style="text-align: center;"
-                    >
+                        :reverse="false"
+                        control-variant="default"
+                        :hide-input="false"
+                        :inset="false"
+                        variant="solo-filled"
+                        v-model="item.qty"
+                        label="จำนวน"
+                        :min="1"
+                        :max="9999"
+                        :step="1"
+                        @update:modelValue="val => {
+                          // item.qty is already updated to val
+                          // Calculate new cansale_qty
+                          const acc = Number(item.acc_qty) || 0;
+                          const reserve = Number(item.reserve_qty) || 0;
+                          const old = Number(item.old_qty) || 0;
+                          const qty = Number(val) || 0;
+                          item.cansale_qty = acc - reserve + old - qty;
+                          item.cansale_status_text = item.cansale_qty > 0 ? 'ขายได้' : 'สินค้าไม่พอขาย';
+                        }"
+                        class="text-center number-input-mobile"
+                        input-style="font-size:18px;text-align:center;min-width:150px;max-width:220px;"
+                        style="text-align:center;min-width:150px;max-width:220px;"
+                      >
                       <!-- {{ item.qty }} -->
                     </v-number-input>
 
@@ -675,15 +684,15 @@ const saleOrderStore = useSaleOrderStore(); //pin store => saleOrderStoreStore
 const eventStore = useEventStore(); //pin store => eventStore
 
 const headers = [
-    {
-      title: 'รหัสสินค้า',
-      align: 'start',
-      sortable: false,
-      value: 'itemcode',
-    },
+    // {
+    //   title: 'รหัสสินค้า',
+    //   align: 'start',
+    //   sortable: false,
+    //   value: 'itemcode',
+    // },
     { title: 'ชื่อสินค้า', value: 'itemname',align: 'start', },
-    { title: 'หน่วยนับ', value: 'unitcode',align: 'start', },
-    { title: 'จำนวนสั่ง', value: 'qty',align: 'end', },
+    // { title: 'หน่วยนับ', value: 'unitcode',align: 'start', },
+    { title: 'จำนวนสั่ง', value: 'qty',align: 'start', },
     { title: 'จำนวนคงเหลือ', value: 'acc_qty',align: 'end', },
     { title: 'จำนวนค้างสั่ง', value: 'reserve_qty',align: 'end', },
     { title: 'จำนวนขายได้', value: 'cansale_qty',align: 'end', },
