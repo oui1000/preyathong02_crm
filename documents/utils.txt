@@ -1,0 +1,2 @@
+//จัดการ screen resolution
+https://github.com/nathanreyes/vue-screen-utils

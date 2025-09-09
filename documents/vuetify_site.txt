@@ -1,0 +1,4 @@
+https://vuetifyjs.com/en/components/navigation-drawers/#expand-on-hover
+
+//theme and color 
+https://vuetifyjs.com/en/styles/colors/#material-colors

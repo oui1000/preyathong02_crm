@@ -1,0 +1,12 @@
+https://www.npmjs.com/package/vue-material-design-icons
+
+//icons site
+https://pictogrammers.com/library/mdi/
+
+https://materialdesignicons.com/cdn/1.6.50-dev/
+
+import MenuIcon from 'vue-material-design-icons/Menu.vue';
+
+components: {
+  MenuIcon;
+}

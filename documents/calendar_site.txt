@@ -1,0 +1,13 @@
+//sample code
+https://vuetifyjs.com/en/components/calendars/
+
+//api
+https://vuetifyjs.com/en/api/v-calendar/
+
+//complex
+https://github.com/vuetifyjs/vuetify/blob/master/packages/docs/src/examples/v-calendar/event-click.vue
+
+//version 3 site ref.
+https://vcalendar.io/getting-started/installation.html
+
+https://github.com/nathanreyes/v-calendar/blob/master/docs/vue-3.md

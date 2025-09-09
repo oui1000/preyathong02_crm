@@ -1,0 +1,13 @@
+src/
+├── pages/
+│   ├── index.vue                // Route: /
+│   ├── about.vue                // Route: /about
+│   ├── users/
+│   │   ├── index.vue            // Route: /users
+│   │   ├── [id].vue             // Route: /users/:id
+│   │   ├── [id]/
+│   │   │   ├── profile.vue      // Route: /users/:id/profile
+│   │   │   ├── settings.vue     // Route: /users/:id/settings
+│   ├── blog/
+│   │   ├── [slug].vue           // Route: /blog/:slug
+│   │   ├── create.vue           // Route: /blog/create
